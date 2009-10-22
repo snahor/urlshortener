@@ -1,0 +1,93 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, form, label {
+    margin: 0; padding: 0; border: 0; 
+    outline: 0; font-weight: inherit;
+    font-style: inherit; font-size: 100%;
+    font-family: inherit; vertical-align: baseline;
+}
+
+:focus { outline: 0; }
+
+body { line-height: 1; color: black; background: white; font-family: "Helevetica Neue", Arial, Sans-serif;}
+
+a { text-decoration: none; color: #DA1071; }
+
+a.link:hover { border-bottom: 2px solid #3989b9; }
+
+#urlbox, #aliasbox {
+    border: 2px solid #ccc;
+    padding: 6px;
+    font-size: 16px;
+    color: #555;
+    /*width: 580px;*/
+    width: 700px;
+}
+
+#urlbox:focus, #aliasbox:focus { border-color: #26B3CF; }
+
+#aliasbox {
+    font-size: 12px;
+    width: 200px;
+}
+
+div.buttons-ctnr { text-align: right; width: 700px; margin: 5px auto; }
+div.buttons-ctnr button { padding: 5px; font-size: 16px; margin-left: 5px; }
+
+#title { text-align: left; }
+
+#title h1 a {
+    color: #111;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#title .dot{
+    color: #26b3cf;
+    font-weight: bold;
+    font-family: "Times New Roman", Serif;
+}
+
+#title .pe { color: #666; }
+
+#title h5 { font-style: italic; font-size: 10px; color: #bbb; text-indent: 20px; margin-top: 5px;}
+
+#title h5:hover { color: #3989b9; }
+
+#content {
+    text-align: center;
+    width: 740px;
+    margin: 100px auto;
+    padding: 10px;
+}
+
+form { margin-top: 30px; }
+
+#footer {
+    color: #aaa;
+    font-size: 12px;
+    margin: 80px auto;
+    width: 500px;
+}
+
+#result {
+    margin-top: 50px;
+}
+
+.message {
+    padding: 10px;
+    color: #555;
+    background-color: #e9eaea;
+    margin: 0 auto 30px;
+    width: 90%;
+}
+
+.twitter {
+    display: block;
+    background: transparent url(10.png) no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    text-indent: -9999px;
+}
+
+.alias { width: 580px; padding: 4px 8px;}
+span.url { color: #ccc; font-style: italic; }

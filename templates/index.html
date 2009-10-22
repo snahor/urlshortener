@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block js %}
+<script type="text/javascript">
+    $(function() {
+        $('#urlbox').focus();
+
+        $('#aliasbtn').click(function() {
+            $('#shortme').before('\
+                <span class="url">http://wy.pe/ </span> \
+                <input id="aliasbox" name="alias" type="text"/>');
+            $('#aliasbox').focus();
+            $(this).hide();
+        });
+    });
+</script>
+{% endblock %}
+
+{% block page_content %}
+<form action="/" method="get" accept-charset="utf-8">
+    <textarea id="urlbox" type="text" name="url"></textarea>
+    <div class="buttons-ctnr">
+        <button id="aliasbtn" type="button">Custom alias</button>
+        <button id="shortme" type="submit">Shorten me!</button>
+    </div>
+</form>
+{% if message %}
+<p class="message">{{ message }}</p>
+{% endif %}
+{% if large and short %}
+<div id="result">
+    <p>
+        <b>Your fat and large url: </b>
+        <a class="link" href="{{ large }}">{{ large_trunc }}</a>
+    </p>
+    <br/>
+    <p><b>Your short url: <a class="link" href="{{ large }}">{{ short }}</a></b></p>
+    <br/>
+    <p><a class="twitter" title="Your url obviously!" href="http://twitter.com/home?status={{ short }}">Twitt this url</a></p>
+</div>
+{% endif %}
+{% endblock %}
