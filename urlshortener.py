@@ -84,14 +84,9 @@ class Index(webapp.RequestHandler):
                 url =  URL.exists(str_url)
 
                 if url is None:
-                    """If url is a new one, then a shorturl must be created for
+                    """If url is new, then a shorturl must be created for
                     it"""
-
                     # create URL object
-                    
-                    
-                    
-
                     url = URL(id=URL.get_last_id() + 1,
                               url=str_url)
                     url.put()
@@ -100,8 +95,6 @@ class Index(webapp.RequestHandler):
                     shorturl = ShortURL(keyword=baseconvert(url.id, BASE10, BASE92))
                     shorturl.url = url
                     shorturl.put()
-                    
-                    
                     
                     template_values['short'] = shorturl.new_url()
      
@@ -116,26 +109,16 @@ class Index(webapp.RequestHandler):
                         shorturl.is_default = False
                         shorturl.put()
                         template_values['short'] = shorturl.new_url()
-                        
-                        
-                        
                     else:
-                        
-                        
-                        
                         template_values['message'] = """The alias "%s" is not
                         available! Anyways, here's a short url.""" % alias
                         template_values['short'] = url.shorturl_set.\
                                                        filter('is_default =', True).\
                                                        get().new_url()
                 else:
-                    
-                    
-                    
                     template_values['short'] = url.shorturl_set.\
                                                    filter('is_default =', True).\
                                                    get().new_url()
-
 
                 template_values['large'] = url.url
                 template_values['large_trunc'] = url.url if len(url.url) < 51 else url.url[:46] + '...'
